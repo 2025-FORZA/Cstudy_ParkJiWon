@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int cow_pos[11];     
+    for (int i = 1; i <= 10; i++) {
+        cow_pos[i] = -1;   
+    }
+
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        int cow, pos;
+        scanf("%d %d", &cow, &pos);
+
+        if (cow_pos[cow] == -1) {
+            cow_pos[cow] = pos; 
+        } else if (cow_pos[cow] != pos) {
+            count++;
+            cow_pos[cow] = pos; 
+        }
+     
+    }
+
+    printf("%d\n", count);
+    return 0;
+}
